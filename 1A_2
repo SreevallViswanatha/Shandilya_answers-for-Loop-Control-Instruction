@@ -6,7 +6,7 @@ main()
 {
     int principle, number_of_years, count;
     float rate_of_interest, simple_interest;
-
+    
     count=1;
 
     while(count<=3)
