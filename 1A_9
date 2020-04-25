@@ -1,0 +1,13 @@
+// Print numbers from 1 to 10 using a post-incrementation operator.
+
+#include <stdio.h>
+#include <stdlib.h>
+main()
+{
+    int number=0;
+
+    while(number++<=9)
+    {
+        printf("%d\n", number);
+    }
+}
