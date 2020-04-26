@@ -1,0 +1,15 @@
+// WAP to display odd numbers from 100 to 1.
+
+#include <stdio.h>
+#include <stdlib.h>
+main()
+{
+    int number=99;
+
+    while(number>=1)
+    {
+        printf("%d\n", number);
+
+        number=number-2;
+    }
+}
