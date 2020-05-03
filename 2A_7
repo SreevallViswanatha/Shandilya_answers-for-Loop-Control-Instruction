@@ -1,0 +1,18 @@
+// WAP to accept a number and display the multiplication table for that number up to 12.
+
+#include <stdio.h>
+#include <stdlib.h>
+main()
+{
+    int number, multiplies=0, product;
+
+    printf("Enter a number:");
+    scanf("%d", &number);
+
+    while(multiplies<12)
+    {
+        multiplies++;
+        product=number*multiplies;
+        printf("%d times %d is:%d.\n", number, multiplies, product);
+    }
+}
