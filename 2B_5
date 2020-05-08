@@ -1,0 +1,16 @@
+// WAP to accept a number and find the sum of its digits.
+#include <stdio.h>
+#include <stdlib.h>
+main()
+{
+    int number, n, sum=0;
+    printf("Enter a number:");
+    scanf("%d", &number);
+    n=number;
+    while(number>0)
+    {
+        sum=sum+number%10;
+        number=number/10;
+    }
+    printf("The sum of all the digits of the number %d is:%d.", n, sum);
+}
