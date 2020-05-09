@@ -1,0 +1,16 @@
+// WAP to accept a number and find the product of the digits of the entered number.
+#include <stdio.h>
+#include <stdlib.h>
+main()
+{
+    int number, product=1, n;
+    printf("Enter a number:");
+    scanf("%d", &number);
+    n=number;
+    while(number>0)
+    {
+        product=product*number%10;
+        number=number/10;
+    }
+    printf("The product of the digits of %d is:%d.", n, product);
+}
