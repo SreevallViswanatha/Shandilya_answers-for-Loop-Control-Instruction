@@ -1,0 +1,15 @@
+// WAP to accept a number and print it in reverse order.
+#include <stdio.h>
+#include <stdlib.h>
+main()
+{
+    int number, remainder;
+    printf("Enter a number:");
+    scanf("%d", &number);
+    while(number>0)
+    {
+        remainder=number%10;
+        number=number/10;
+        printf("%d", remainder);
+    }
+}
