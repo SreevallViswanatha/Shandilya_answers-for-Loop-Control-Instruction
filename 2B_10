@@ -4,21 +4,19 @@
 #include<math.h>
 int main()
 {
-    int number, number_of_digits, power=1, n, a;
+    int number, number_of_digits, reverse_number=0;
     printf("Enter a number:");
     scanf("%d", &number);
-    n=number;
     number_of_digits=log10(number);
-    a=number_of_digits;
-    while(a!=0)
-    {
-        power=power*10;
-        a--;
-    }
     while(number!=0)
     {
-        a=number/power;
-        switch(a)
+        reverse_number=(reverse_number*10)+(number%10);
+        number=number/10;
+    }
+    number_of_digits=number_of_digits-((int)log10(reverse_number));
+    while(reverse_number!=0)
+    {
+        switch(reverse_number%10)
         {
         case 0:
             printf("zero ");
@@ -51,14 +49,11 @@ int main()
             printf("nine ");
             break;
         }
-        number=number%power;
-        power=power/10;
+        reverse_number=reverse_number/10;
     }
     while(number_of_digits!=0)
     {
-        if(n%10==0)
-            printf("zero ");
-        n=n/10;
+        printf("zero ");
         number_of_digits--;
     }
 }
