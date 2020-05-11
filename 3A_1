@@ -1,0 +1,14 @@
+// WAP to find power of a number.
+#include <stdio.h>
+#include <stdlib.h>
+#include<math.h>
+main()
+{
+    int number, power, a;
+    printf("Enter a number:");
+    scanf("%d", &number);
+    printf("Enter the power to which you want to raise the number:");
+    scanf("%d", &power);
+    a=pow(number, power);
+    printf("The answer is:%d.", a);
+}
