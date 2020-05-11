@@ -4,11 +4,15 @@
 #include<math.h>
 main()
 {
-    int number, power, a;
-    printf("Enter a number:");
+    int number, i=1, power=1, exponent;
+    printf("Enter the base:");
     scanf("%d", &number);
-    printf("Enter the power to which you want to raise the number:");
-    scanf("%d", &power);
-    a=pow(number, power);
-    printf("The answer is:%d.", a);
+    printf("Enter the exponent:");
+    scanf("%d", &exponent);
+    while(i<=exponent)
+    {
+        power=number*power;
+        i++;
+    }
+    printf("%d^%d=%d", number, exponent, power);
 }
