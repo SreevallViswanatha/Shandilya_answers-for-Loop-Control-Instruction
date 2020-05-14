@@ -1,0 +1,16 @@
+// WAP to find the factors of a given number except 1 and num itself.
+#include <stdio.h>
+#include <stdlib.h>
+main()
+{
+    int number, factor=2;
+    printf("Enter a number:");
+    scanf("%d", &number);
+    printf("The factors except 1 and %d are:", number);
+    while(factor<=number/2)
+    {
+        if(number%factor==0)
+            printf("%d, ", factor);
+        factor++;
+    }
+}
