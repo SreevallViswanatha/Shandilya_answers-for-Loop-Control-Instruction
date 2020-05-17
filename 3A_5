@@ -1,0 +1,18 @@
+// WAP to find HCF(GCD) of two given numbers.
+#include <stdio.h>
+#include <stdlib.h>
+main()
+{
+    int GCF=1, number1, number2, i;
+    printf("Enter the first number:");
+    scanf("%d", &number1);
+    printf("Enter the second number:");
+    scanf("%d", &number2);
+    while((GCF<=number1)&&(GCF<=number2))
+    {
+        if((number1%GCF==0)&&(number2%GCF==0))
+            i=GCF;
+        GCF++;
+    }
+    printf("The GCF of %d and %d is:%d.", number1, number2, i);
+}
