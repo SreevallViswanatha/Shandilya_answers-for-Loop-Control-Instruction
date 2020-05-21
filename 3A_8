@@ -1,0 +1,27 @@
+// Print all Prime numbers between 1 to n.
+#include<stdio.h>
+#include<stdlib.h>
+main()
+{
+    int number, i=2, prime;
+    printf("Enter a number:");
+    scanf("%d", &number);
+    printf("The prime numbers from 1 to %d are:", number);
+    while(i<=number)
+    {
+        prime=1;
+        int factor=2;
+        while(factor<=i/2)
+        {
+            if(i%factor==0)
+            {
+                prime=0;
+                break;
+            }
+            factor++;
+        }
+        if(prime==1)
+            printf("%d, ", i);
+        i++;
+    }
+}
