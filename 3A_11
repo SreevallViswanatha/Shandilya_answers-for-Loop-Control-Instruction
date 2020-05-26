@@ -1,0 +1,26 @@
+// WAP to print all Armstrong numbers between start to end.
+#include <stdio.h>
+#include <stdlib.h>
+main()
+{
+    int armstrong, n, sum=0, end, remainder;
+    printf("Enter the start limit:");
+    scanf("%d", &armstrong);
+    printf("Enter the end limit:");
+    scanf("%d", &end);
+    printf("The Armstrong numbers from %d to %d are:", armstrong, end);
+    while(armstrong<=end)
+    {
+        n=armstrong;
+        while(n>0)
+        {
+            remainder=n%10;
+            sum=sum+remainder*remainder*remainder;
+            n=n/10;
+        }
+        if(sum==armstrong)
+            printf("%d, ", armstrong);
+        sum=0;
+        armstrong++;
+    }
+}
