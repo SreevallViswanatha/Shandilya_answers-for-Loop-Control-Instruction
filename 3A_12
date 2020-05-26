@@ -1,0 +1,23 @@
+// WAP to find if a number is a perfect number.
+#include <stdio.h>
+#include <stdlib.h>
+main()
+{
+    int number, perfect=0;
+    printf("Enter a number:");
+    scanf("%d", &number);
+    while(perfect<number)
+    {
+        if(perfect*perfect==number)
+        {
+            printf("The number %d is a perfect number.", number);
+            break;
+        }
+        else
+            perfect++;
+    }
+    if((perfect==number)&&(perfect>1))
+        printf("The number %d is not a perfect number.", number);
+    if((perfect==0)||(perfect==1))
+        printf("The number %d is a perfect number.", number);
+}
