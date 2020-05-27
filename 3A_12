@@ -3,21 +3,17 @@
 #include <stdlib.h>
 main()
 {
-    int number, perfect=0;
+    int number, factor=1, sum=0;
     printf("Enter a number:");
     scanf("%d", &number);
-    while(perfect<number)
+    while(factor<=number/2)
     {
-        if(perfect*perfect==number)
-        {
-            printf("The number %d is a perfect number.", number);
-            break;
-        }
-        else
-            perfect++;
+        if(number%factor==0)
+            sum+=factor;
+        factor++;
     }
-    if((perfect==number)&&(perfect>1))
-        printf("The number %d is not a perfect number.", number);
-    if((perfect==0)||(perfect==1))
-        printf("The number %d is a perfect number.", number);
+    if(sum==number)
+        printf("%d is a perfect number.", number);
+    else
+        printf("%d is not a perfect number.", number);
 }
