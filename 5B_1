@@ -1,0 +1,20 @@
+// WAP to find if a number is a perfect square.
+#include <stdio.h>
+#include <stdlib.h>
+main()
+{
+    int number, perfect_square=0;
+    printf("Enter a number:");
+    scanf("%d", &number);
+    while(perfect_square<=number/2)
+    {
+        if((perfect_square*perfect_square==number)||(number==1))
+        {
+            printf("%d is a perfect square.", number);
+            break;
+        }
+        perfect_square++;
+        if(perfect_square>number/2)
+            printf("%d is not a perfect square.", number);
+    }
+}
