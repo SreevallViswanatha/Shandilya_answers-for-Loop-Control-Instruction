@@ -1,0 +1,33 @@
+// WAP to find if a number is a STRONG number.
+#include <stdio.h>
+#include <stdlib.h>
+main()
+{
+    int number, sum=0, n, remainder;
+    unsigned long long factorial;
+    printf("Enter a number:");
+    scanf("%d", &number);
+    n=number;
+    while(number>0)
+    {
+        remainder=number%10;
+        if((remainder==1)||(remainder==0))
+            factorial=1;
+        else
+        {
+            factorial=remainder*(remainder-1);
+            remainder--;
+        }
+        while(remainder>1)
+        {
+            factorial=factorial*(remainder-1);
+            remainder--;
+        }
+        sum=sum+factorial;
+        number=number/10;
+    }
+    if(sum==n)
+        printf("The number %d is a strong number.", n);
+    else
+        printf("The number %d is not a strong number.", n);
+}
