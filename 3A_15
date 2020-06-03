@@ -7,27 +7,30 @@ main()
     unsigned long long factorial;
     printf("Enter a number:");
     scanf("%d", &number);
+    // Storing the input into another variable for later use.
     n=number;
+    // Finding the sum of the factorials of the digits.
     while(number>0)
     {
+        // Finding the last digit of the input.
         remainder=number%10;
-        if((remainder==1)||(remainder==0))
-            factorial=1;
-        else
+        // Initializing factorial.
+        factorial=1;
+        // Finding the factorial of the last digit.
+        while(remainder>0)
         {
-            factorial=remainder*(remainder-1);
+            factorial=factorial*remainder;
             remainder--;
         }
-        while(remainder>1)
-        {
-            factorial=factorial*(remainder-1);
-            remainder--;
-        }
+        // Adding the factorial to the sum.
         sum=sum+factorial;
+        // Dividing the number by 10 to get the next digit in the next loop.
         number=number/10;
     }
+    // The sum has to be equal to n, the variable where the original input has been stored, to be a strong number.
     if(sum==n)
         printf("The number %d is a strong number.", n);
     else
         printf("The number %d is not a strong number.", n);
 }
+
