@@ -1,0 +1,52 @@
+// WAP to find the strong numbers from 1 to n.
+#include <stdio.h>
+#include <stdlib.h>
+main()
+{
+    // Initializing n and sum as 1 and 0, respectively.
+    int end, factorial, last_digit, sum=0, n=1, i, j;
+    // Asking the user to input the end limit.
+    printf("Enter the end limit:");
+    // Storing the input the user enters into end.
+    scanf("%d", &end);
+    // Printing the opening statement.
+    printf("The strong numbers from 1 to %d are:", end);
+    // Finding each number from 1 to the end and checking if that number is strong or not.
+    while(n<=end)
+    {
+        // Storing the value of n into i.
+        i=n;
+        // Storing i into j in case the number has more than 1 digit.
+        j=i;
+        // Checking if i is a strong number.
+        while(i>0)
+        {
+            // Finding the last digit of i.
+            last_digit=i%10;
+            // Initializing factorial.
+            factorial=1;
+            // Finding the factorial of the last digit.
+            while(last_digit>0)
+            {
+                // Multiplying factorial by last_digit.
+                factorial=factorial*last_digit;
+                // Reducing last_digit by 1.
+                last_digit--;
+            }
+            // Adding the factorial of the last digit to sum.
+            sum+=factorial;
+            // Dividing i by 10 to find the next digit in the next loop.
+            i=i/10;
+        }
+        // Seeing if the sum equals i.
+        if(sum==j)
+        {
+            // Printing the value of i.
+            printf("%d, ", j);
+        }
+        // Initializing sum to 0.
+        sum=0;
+        // Increasing n by 1 to find the next strong number.
+        n++;
+    }
+}
