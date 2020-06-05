@@ -15,6 +15,12 @@ main()
     scanf("%d", &end);
     // Printing the opening sentence:
     printf("The strong numbers from %d to %d are:", n, end);
+    // Finding if the start is less than 1:
+    if(n<1)
+    {
+        // Making the start 1:
+        n=1;
+    }
     // Finding the numbers from start to end:
     while(n<=end)
     {
