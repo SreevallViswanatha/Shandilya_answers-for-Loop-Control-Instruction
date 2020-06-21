@@ -11,10 +11,14 @@ main()
     printf("Converting %u to binary:", number);
     while(number>0)
     {
+        // Finding if the remainder is 0 or 1. We can use this and multiply this by place and add it to binary to get the binary number.
         remainder=number%2;
         binary=place*remainder+binary;
+        // Since the binary system is base 2, we have to divide it by 2 and repeat.
         number=number/2;
+        // Multiplying the place by 10 will help to put the next digit before the previous digit when doing line 16.
         place=place*10;
     }
+    // Printing the result:
     printf("%u.", binary);
 }
