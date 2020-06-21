@@ -1,0 +1,20 @@
+// WAP to convert decimal to binary system.
+#include <stdio.h>
+#include <stdlib.h>
+#include<math.h>
+main()
+{
+    unsigned int binary=0, number;
+    int remainder, place=1;
+    printf("Enter a decimal-system number:");
+    scanf("%u", &number);
+    printf("Converting %u to binary:", number);
+    while(number>0)
+    {
+        remainder=number%2;
+        binary=place*remainder+binary;
+        number=number/2;
+        place=place*10;
+    }
+    printf("%u.", binary);
+}
