@@ -1,0 +1,32 @@
+// WAP to convert binary number to decimal.
+#include <stdio.h>
+#include <stdlib.h>
+#include<string.h>
+#include<math.h>
+main()
+{
+    char binary[1000];
+    int i=0, length, j;
+    unsigned int sum=0;
+    printf("Enter a binary number:");
+    scanf("%s", binary);
+    // Finding the length of the string minus 1:
+    length=strlen(binary)-1;
+    j=length;
+    while(i<=length)
+    {
+        // If the character is 1, then sum is sum plus power of 2 and length;
+        if(binary[i]=='1')
+            sum+=pow(2, j);
+        // If the character is not 0 or 1, the input is invalid.
+        else if(!(binary[i]=='0'))
+        {
+            printf("The input is invalid.");
+            exit(0);
+        }
+        // i is increased while j is decreased.
+        i++;
+        j--;
+    }
+    printf("Converting %s to decimal:%u.", binary, sum);
+}
