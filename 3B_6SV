@@ -1,0 +1,24 @@
+// WAP to convert binary to decimal numbering system.
+#include <stdio.h>
+#include <stdlib.h>
+main()
+{
+    long long binary, b, decimal=0;
+    int N=0;
+    printf("Enter a binary number:");
+    scanf("%lld", &binary);
+    b=binary;
+    while(b!=0)
+    {
+        int i=1, result=1;
+        while(i<=N)
+        {
+            result*=2;
+            i++;
+        }
+        decimal+=result;
+        N++;
+        b/=10;
+    }
+    printf("Converting %lld to decimal:%lld.", binary, decimal);
+}
