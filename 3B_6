@@ -1,0 +1,32 @@
+// WAP to convert binary to octal numbering system.
+#include <stdio.h>
+#include <stdlib.h>
+main()
+{
+    unsigned long binary;
+    int octal=0, i, j, partial=0, k=1, place=1;
+    printf("Enter a binary number:");
+    scanf("%lu", &binary);
+    printf("Converting %lu to octal:", binary);
+    while(binary>0)
+    {
+        // Getting the last three digits of the binary number:
+        i=binary%1000;
+        while(i>0)
+        {
+            // Getting the last digit of i and multiplying it with: 1. 1, 2. 2, and 3. 4 to get the digit of the last three digits in the octal numbering system:
+            j=i%10;
+            partial+=j*k;
+            i/=10;
+            k*=2;
+        }
+        // Adding octal to the digit(partial) obtained as the digit in the octal numbering system, raising place to the next power, and re-assigning most of the variables:
+        octal+=partial*place;
+        place*=10;
+        k=1;
+        partial=0;
+        // Dividing binary by 1000 to get the next three digits:
+        binary/=1000;
+    }
+    printf("%d", octal);
+}
