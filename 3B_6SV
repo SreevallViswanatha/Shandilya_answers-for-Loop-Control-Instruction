@@ -10,15 +10,18 @@ main()
     b=binary;
     while(b!=0)
     {
-        int i=1, result=1;
-        while(i<=N)
+        if(b%10==1)
         {
-            result*=2;
-            i++;
+            int i=1, result=1;
+            while(i<=N)
+            {
+                result*=2;
+                i++;
+            }
+            decimal+=result;
+            N++;
+            b/=10;
         }
-        decimal+=result;
-        N++;
-        b/=10;
     }
     printf("Converting %lld to decimal:%lld.", binary, decimal);
 }
