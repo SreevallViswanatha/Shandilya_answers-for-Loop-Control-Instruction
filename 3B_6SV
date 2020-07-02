@@ -19,9 +19,9 @@ main()
                 i++;
             }
             decimal+=result;
-            N++;
-            b/=10;
         }
+        N++;
+        b/=10;
     }
     printf("Converting %lld to decimal:%lld.", binary, decimal);
 }
