@@ -1,0 +1,47 @@
+// WAP to convert binary to hexadecimal number system.
+#include <stdio.h>
+#include <stdlib.h>
+main()
+{
+    long long binary;
+    int binary_partial, decimal=0, N=0;
+    char hexadecimal[10];
+    printf("Enter a binary number:");
+    scanf("%lld", &binary);
+    printf("Converting %lld to hexadecimal:", binary);
+    while(binary>0)
+    {
+        binary_partial=binary%10000;
+        while(binary_partial!=0)
+        {
+            if(binary_partial%10==1)
+             {
+                 int i=1, result=1;
+                 while(i<=N)
+                 {
+                     result*=2;
+                     i++;
+                 }
+                 decimal+=result;
+             }
+             N++;
+             binary_partial/=10;
+        }
+        if(decimal==10)
+            printf("A");
+        else if(decimal==11)
+            printf("B");
+        else if(decimal==12)
+            printf("C");
+        else if(decimal==13)
+            printf("D");
+        else if(decimal==14)
+            printf("E");
+        else if(decimal==15)
+            printf("F");
+        else
+            printf("%d", decimal);
+        decimal=0;
+        binary/=10000;
+    }
+}
