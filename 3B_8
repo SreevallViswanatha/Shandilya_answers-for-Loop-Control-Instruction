@@ -1,11 +1,39 @@
 // WAP to convert binary to hexadecimal number system.
 #include <stdio.h>
 #include <stdlib.h>
+#include<string.h>
 main()
 {
-    int hexadecimal_partial[16]={0, 1, 10, 11, 100, 101, 110, 111, 1000, 1001, 1010, 1011, 1100, 1101, 1110, 1111};
-    char binary;
+    int hexadecimal_partial[16]={0, 1, 10, 11, 100, 101, 110, 111, 1000, 1001, 1010, 1011, 1100, 1101, 1110, 1111}, last_four_digits, i=0, n=0;
+    long long binary;
+    char hexadecimal[100], c;
     printf("Enter a binary number:");
     scanf("%lld", &binary);
-    while()
+    printf("Converting %lld to hexadecimal:", binary);
+    while(binary>0)
+    {
+        // Getting the last four digits of the binary number:
+        last_four_digits=binary%10000;
+        // Getting the value of i, which is one of the strings stored in the array:
+        while(i<=15)
+        {
+            if(hexadecimal_partial[i]==last_four_digits)
+                break;
+            else
+                i++;
+        }
+        // If i>10, converting the number to letter:
+        if(i<10)
+            c=i+48;
+        else
+            c=i+55;
+        hexadecimal[n]=c;
+        binary/=10000;
+        i=0;
+        n++;
+    }
+    hexadecimal[100]='\0';
+    // Reversing the characters of the string:
+    strrev(hexadecimal);
+    printf("%s.", hexadecimal);
 }
