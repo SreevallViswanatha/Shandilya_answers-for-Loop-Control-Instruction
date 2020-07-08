@@ -3,11 +3,11 @@
 #include <stdlib.h>
 main()
 {
-    unsigned long binary;
+    long long binary;
     int octal=0, i, j, partial=0, k=1, place=1;
     printf("Enter a binary number:");
-    scanf("%lu", &binary);
-    printf("Converting %lu to octal:", binary);
+    scanf("%lld", &binary);
+    printf("Converting %lld to octal:", binary);
     while(binary>0)
     {
         // Getting the last three digits of the binary number:
