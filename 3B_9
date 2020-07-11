@@ -1,0 +1,50 @@
+// WAP to convert Octal to Hexadecimal number system.
+#include <stdio.h>
+#include <stdlib.h>
+#include<string.h>
+main()
+{
+    int binary_partial[8]={0, 1, 10, 11, 100, 101, 110, 111}, octal, last_digit, place=1, hexadecimal_partial[16]={0, 1, 10, 11, 100, 101, 110, 111, 1000, 1001, 1010, 1011, 1100, 1101, 1110, 1111};
+    long long binary=0;
+    char hexadecimal[100];
+    printf("Enter an octal number:");
+    scanf("%d", &octal);
+    printf("Converting %d to hexadecimal numbering system:", octal);
+    while(octal>0)
+    {
+        // Getting the last digit of the octal number:
+        last_digit=octal%10;
+        // Replacing the last digit of the number with a binary number:
+        binary+=binary_partial[last_digit]*place;
+        // Increasing the place value:
+        place*=1000;
+        // Removing one digit from the octal number:
+        octal/=10;
+    }
+    place=0;
+    while(binary>0)
+    {
+        // Getting the last four digits of the binary number:
+        last_digit=binary%10000;
+        // Getting the value of octal(reusing variable), which is one of the strings stored in the array:
+        while(octal<=15)
+        {
+            if(hexadecimal_partial[octal]==last_digit)
+                break;
+            else
+                octal++;
+        }
+        // If octal>10, converting the number to letter:
+        if(octal<10)
+            hexadecimal[place]=octal+48;
+        else
+            hexadecimal[place]=octal+55;
+        binary/=10000;
+        octal=0;
+        place++;
+    }
+    hexadecimal[100]='\0';
+    // Reversing the characters of the string:
+    strrev(hexadecimal);
+    printf("%s", hexadecimal);
+}
