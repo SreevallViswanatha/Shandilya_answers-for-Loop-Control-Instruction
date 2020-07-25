@@ -9,6 +9,7 @@ main()
     int remainder, decimal, i=0;
     printf("Enter a decimal number:");
     scanf("%d", &decimal);
+    printf("Converting %d to hexadecimal:", decimal);
     while(decimal>0)
     {
         // Finding the last digit in hexadecimal system:
