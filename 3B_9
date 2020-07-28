@@ -12,20 +12,29 @@ main()
     printf("Converting %lld to hexadecimal:", octal);
     while(octal>0)
     {
+        // Finding the last digit of the octal number:
         last_digit=octal%10;
+        // Converting the last digit of the octal number to a decimal digit:
         decimal+=pow(8, place)*last_digit;
+        // Shortening the octal number by 1 digit:
         octal/=10;
+        // Increasing the place value:
         place++;
     }
     place=0;
     while(decimal>0)
     {
+        // Finding the last digit of the decimal number (in hexadecimal system):
         last_digit=decimal%16;
+        // Replacing the "last digit" of the decimal number with a character from hexadecimal_values:
         hexadecimal[place]=hexadecimal_values[last_digit];
+        // Increasing the index of the string:
         place++;
+        // Dividing decimal by 16:
         decimal/=16;
     }
     hexadecimal[place]='\0';
+    // Reversing the characters of the string:
     strrev(hexadecimal);
     printf("%s", hexadecimal);
 }
