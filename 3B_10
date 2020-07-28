@@ -21,7 +21,7 @@ main()
         decimal/=16;
     }
     // Marking the end of hexadecimal:
-    hexadecimal[100]='\0';
+    hexadecimal[i]='\0';
     // Reversing the characters of the string:
     strrev(hexadecimal);
     // Printing the output:
