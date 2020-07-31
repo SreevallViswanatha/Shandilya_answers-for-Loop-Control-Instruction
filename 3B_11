@@ -1,0 +1,48 @@
+// WAP to convert hexadecimal to octal.
+#include <stdio.h>
+#include <stdlib.h>
+#include<string.h>
+#include<math.h>
+main()
+{
+    char hexadecimal[100], remainder;
+    long long octal=0, decimal=0;
+    int length, place=0;
+    printf("Enter a hexadecimal number:");
+    scanf("%s", hexadecimal);
+    // Finding the length of the string:
+    length=strlen(hexadecimal);
+    while(length>0)
+    {
+        // Finding the last hexadecimal digit or letter:
+        remainder=hexadecimal[length-1];
+        // If the last digit is a letter, converting the letter into the assigned hexadecimal values, and doing 16^place and multiplying it by remainder:
+        if((remainder>=65)&&(remainder<=70))
+            decimal+=pow(16, place)*(remainder-55);
+        // If the last digit is a digit, doing 16^place and multiplying it with the last digit:
+        else if((remainder>=48)&&(remainder<=57))
+            decimal+=pow(16, place)*(remainder-48);
+        // If the last digit is none of these, then the input is invalid.
+        else
+        {
+            printf("The input is invalid.");
+            exit(0);
+        }
+        length--;
+        place++;
+    }
+    // Assigning 1 to place to reuse it:
+    place=1;
+    while(decimal>0)
+    {
+        // Finding the last digit of the decimal number in octal terms and storing the value in the reused variable length:
+        length=decimal%8;
+        // Adding length*place to octal and storing the result in octal:
+        octal+=length*place;
+        // Dividing decimal by 8 and storing the result in decimal:
+        decimal/=8;
+        // Multiplying place by 10:
+        place*=10;
+    }
+    printf("Converting %s to octal:%lld.", hexadecimal, octal);
+}
