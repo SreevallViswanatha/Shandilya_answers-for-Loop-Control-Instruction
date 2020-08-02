@@ -1,0 +1,33 @@
+// WAP to convert hexadecimal to decimal.
+#include <stdio.h>
+#include <stdlib.h>
+#include<string.h>
+#include<math.h>
+main()
+{
+    char hexadecimal[100], remainder;
+    int length, place=0;
+    long long decimal=0;
+    printf("Enter a hexadecimal number:");
+    scanf("%s", hexadecimal);
+    length=strlen(hexadecimal);
+    while(length>0)
+    {
+        // Finding the last digit of the hexadecimal number:
+        remainder=hexadecimal[length-1];
+        // Converting the last digit of the number into decimal format and adding the value to decimal:
+        if((remainder>=65)&&(remainder<=70))
+            decimal+=pow(16, place)*(remainder-55);
+        else if((remainder>=48)&&(remainder<=57))
+            decimal+=pow(16, place)*(remainder-48);
+        // If the character is not A-F or 0-9, then the input is invalid:
+        else
+        {
+            printf("The input %s is invalid.", hexadecimal);
+            exit(0);
+        }
+        length--;
+        place++;
+    }
+    printf("Converting %s to decimal:%lld", hexadecimal, decimal);
+}
