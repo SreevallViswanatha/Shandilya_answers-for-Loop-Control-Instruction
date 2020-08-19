@@ -1,17 +1,22 @@
 // WAP to convert decimal to octal.
 #include <stdio.h>
 #include <stdlib.h>
+#include<math.h>
 main()
 {
     long long decimal, octal=0;
-    int last_digit, place=0;
+    int last_digit, place=1;
     printf("Enter a decimal number:");
     scanf("%lld", &decimal);
+    printf("Converting %lld to octal:", decimal);
     while(decimal>0)
     {
+        // Finding the last digit of the decimal number in octal system:
         last_digit=decimal%8;
+        // Multiplying last_digit by a power of ten and adding the result to octal:
+        octal+=last_digit*place;
         decimal/=8;
-        place++;
+        place*=10;
     }
     printf("%lld", octal);
 }
