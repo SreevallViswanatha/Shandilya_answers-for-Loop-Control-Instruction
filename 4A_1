@@ -1,0 +1,22 @@
+// WAP to calculate overtime pay of 10 employees. Overtime is paid at the rate of $ 12.00 per hour for every hour worked above 40 hours. Assume that employees do not work for fractional part of an hour.
+#include <stdio.h>
+#include <stdlib.h>
+main()
+{
+    int hours, i=1, overtime;
+    while(i<=10)
+    {
+        printf("Enter the hours of work of employee %d:", i);
+        scanf("%d", &hours);
+        if(hours>40)
+        {
+            // Calculating the overtime pay of employee number i:
+            overtime=(hours-40)*12;
+            printf("\nThe overtime pay for employee number %d is:%d.\n\n", i, overtime);
+        }
+        // If the hours are not over 40 then the employee has no overtime pay.
+        else
+            printf("\nEmployee number %d has no overtime pay.\n\n", i);
+        i++;
+    }
+}
