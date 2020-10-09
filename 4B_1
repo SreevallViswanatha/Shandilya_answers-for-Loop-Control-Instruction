@@ -1,0 +1,28 @@
+// WAP for a matchstick game being played between the computer and a user. Your program should ensure that the computer always wins.
+#include <stdio.h>
+#include <stdlib.h>
+main()
+{
+    int matchsticks=21, player, count;
+    while(1)
+    {
+        printf("Pick up 1, 2, 3, or 4 matchsticks:");
+        scanf("%d", &player);
+        if((player>=1)&&(player<=4))
+        {
+            matchsticks=matchsticks-player;
+            printf("The number of matchsticks left:%d\n", matchsticks);
+            count=5-player;
+            printf("The computer picked:%d\n", count);
+            matchsticks=matchsticks-count;
+            printf("Number of matchsticks left:%d\n", matchsticks);
+            if(matchsticks==1)
+            {
+                printf("You lose!!");
+                break;
+            }
+        }
+        else
+            break;
+    }
+}
