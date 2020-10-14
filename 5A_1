@@ -1,0 +1,32 @@
+// Count number of positives, negatives and zeros.
+#include<stdio.h>
+int main()
+{
+    int number, positive=0, negative=0, zero=0;
+    char control;
+    while(1)
+    {
+        printf("Enter 'Y' to continue. Enter 'N' to discontinue:");
+        scanf("%c", &control);
+        if(control=='Y')
+        {
+            printf("Enter a number:");
+            scanf("%d", &number);
+            if(number>0)
+                positive++;
+            else if(number<0)
+                negative++;
+            else
+                zero++;
+                fflush(stdin);
+        }
+        else
+        {
+            printf("The program has stopped.\n");
+            printf("The number of positive numbers is:%d\n", positive);
+            printf("The number of negative numbers is:%d\n", negative);
+            printf("The number of zeros is:%d", zero);
+            break;
+        }
+    }
+}
