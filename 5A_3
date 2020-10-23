@@ -1,0 +1,32 @@
+// WAP to find the range of a set of numbers entered through the keyboard. Range is the difference between the smallest and biggest number in the list.
+#include <stdio.h>
+#include <stdlib.h>
+main()
+{
+    int number, set, control=0, biggest, smallest, range;
+    printf("Enter the number of numbers in your set:");
+    scanf("%d", &set);
+    while(set>0)
+    {
+        printf("Enter the number:");
+        scanf("%d", &number);
+        if(control==0)
+        {
+            biggest=number;
+            smallest=number;
+            control=1;
+        }
+        if(biggest>number)
+            biggest=number;
+        if(smallest<number)
+            smallest=number;
+        set--;
+    }
+    if(smallest<0)
+        range=biggest+smallest;
+    else
+        range=biggest-smallest;
+    if(range<0)
+        range*=-1;
+    printf("The range is:%d", range);
+}
